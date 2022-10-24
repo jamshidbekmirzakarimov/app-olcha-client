@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            scroll-behavior: smooth !important;
+        }
+        b{
+            margin: 10px;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <b><a href="#">previous</a></b>
+        <b><a href="#">next</a></b>
+        <b><a href="#">contents</a></b>
+        <b><a href="#">elements</a></b>
+        <b><a href="#">attributes</a></b>
+        <b><a href="#">index</a></b>
+    </nav>
+    <hr>
+    <h1>5 HTML Document Representation</h1>
+    <blockquote>
+    <div style="border: 1px solid black; background:rgb(209, 209, 209);">
+
+        <p>
+        <h2 style="color: blue;"><b>Contents</b></h2>
+        </p>
+        <ol>
+            <li><a href="#5.1 The Document Character Set">The Document Character Set</a></li>
+            <li><a href="#5.2 Character encodings">Character encodings</a>
+                <ol>
+                    <li><a href="#5.2.1 Choosing an encoding">Choosing an encoding</a>
+                        <ul style="list-style-type: square;">
+                            <li><a href="#Notes on specific encodings">Notes on specific encodings</a></li>
+                        </ul>
+                        <li><a href="#5.2.2 Specifying the character encoding">Specifying the character encoding</a></li>
+                    </li>
+                </ol>
+                <li><a href="#5.3 Character references">Character references</a></li>
+            </li>
+            <ol>
+                <li><a href="#5.3.1 Numeric character references">Numeric character references</a></li>
+                <li><a href="#5.3.2 Character entity references">Character entity references</a></li>
+            </ol>
+            <li><a href="#5.4 Undisplayable characters">Undisplayable characters</a></li>
+        </ol>
+    </div>
+</blockquote>
+    <p>In this chapter, we discuss how HTML documents are represented on a computer and over the Internet.</p>
+    <p>The section on the <a href="#5.1 The Document Character Set">document character set</a> addresses the issue of what abstract characters may be part of an HTML document. Characters include the Latin letter "A", the Cyrillic letter "I", the Chinese character meaning "water", etc.</p>
+    <p>The section on character encodings addresses the issue of how those characters may be represented in a file or when transferred over the Internet. As some character encodings cannot directly represent all characters an author may want to include in a document, HTML offers other mechanisms, called character references, for referring to any character.</p>
+    <p>Since there are a great number of characters throughout human languages, and a great variety of ways to represent those characters, proper care must be taken so that documents may be understood by user agents around the world.</p>
+    <main>
+
+        <section id="5.1 The Document Character Set">
+    <h2 style="color: rgb(97, 97, 240);" id="5.1 The Document Character Set">5.1 The Document Character Set</h2>
+    <p>To promote interoperability, SGML requires that each application (including HTML) specify its document character set. A document character set consists of:</p>
+
+    <ul>
+        <li>A Repertoire: A set of abstract characters,, such as the Latin letter "A", the Cyrillic letter "I", the Chinese character meaning "water", etc.</li>
+        <li>Code positions: A set of integer references to characters in the repertoire</li>
+    </ul>
+    
+    <p>Each SGML document (including each HTML document) is a sequence of characters from the repertoire. Computer systems identify each character by its code position; for example, in the ASCII character set, code positions 65, 66, and 67 refer to the characters 'A', 'B', and 'C', respectively.</p>
+    <p>The ASCII character set is not sufficient for a global information system such as the Web, so HTML uses the much more complete character set called the Universal Character Set (UCS), defined in [ <a href=""><span style="color: red;">ISO10646</span></a>]. This standard defines a repertoire of thousands of characters used by communities all over the world.</p>
+    <p>The character set defined in [ <span style="color: red;">ISO10646</span> ] is character-by-character equivalent to Unicode ( <span style="color: red;">[UNICODE]</span> ). Both of these standards are updated from time to time with new characters, and the amendments should be consulted at the respective Web sites. In the current specification, "[ISO10646]" is used to refer to the document character set while "[UNICODE]" is reserved for references to the Unicode bidirectional text algorithm.</p>
+    <p>The document character set, however, does not suffice to allow user agents to correctly interpret HTML documents as they are typically exchanged -- encoded as a sequence of bytes in a file or during a network transmission. User agents must also know the specific <a href="">character encoding</a> that was used to transform the document character stream into a byte stream.</p>
+</section>
+
+<section  id="5.2 Character encodings">
+    <h2 style="color: blue;">5.2 Character encodings</h2>
+    <p>What this specification calls a character encoding is known by different names in other specifications (which may cause some confusion). However, the concept is largely the same across the Internet. Also, protocol headers, attributes, and parameters referring to character encodings share the same name -- "charset" -- and use the same values from the      <a href=""><span style="color: red;">[IANA]</span></a> registry (see <span style="color: green;">[CHARSETS]</span>  for a complete list).</p>
+    <p>The "charset" parameter identifies a character encoding, which is a method of converting a sequence of bytes into a sequence of characters. This conversion fits naturally with the scheme of Web activity: servers send HTML documents to user agents as a stream of bytes; user agents interpret them as a sequence of characters. The conversion method can range from simple one-to-one correspondence to complex switching schemes or algorithms.</p>
+    <p>A simple one-byte-per-character encoding technique is not sufficient for text strings over a character repertoire as large as <a href=""><span style="color: red;">[ISO10646]</span></a>. There are several different encodings of parts of <a href=""><span style="color: red;">[ISO10646]</span></a> in addition to encodings of the entire character set (such as UCS-4).</p>
+</section>
+
+<section id="5.2.1 Choosing an encoding">
+    <h2 style="color: blue;">5.2.1 Choosing an encoding</h2>
+    Authoring tools (e.g., text editors) may encode HTML documents in the character encoding of their choice, and the choice largely depends on the conventions used by the system software. These tools may employ any convenient encoding that covers most of the characters contained in the document, provided the encoding is <a href=""> correctly labeled</a>. Occasional characters that fall outside this encoding may still be represented by <a href="">character references</a>. These always refer to the document character set, not the character encoding.
+
+    <p>Servers and proxies may change a character encoding (called transcoding) on the fly to meet the requests of user agents (see section 14.2 of<a href=""></a> <span style="color: red;">[RFC2616]</span></a> , the "Accept-Charset" HTTP request header). Servers and proxies do not have to serve a document in a character encoding that covers the entire document character set.</p>
+
+    <p>Commonly used character encodings on the Web include ISO-8859-1 (also referred to as "Latin-1"; usable for most Western European languages), ISO-8859-5 (which supports Cyrillic), SHIFT_JIS (a Japanese encoding), EUC-JP (another Japanese encoding), and UTF-8 (an encoding of ISO 10646 using a different number of bytes for different characters). Names for character encodings are case-insensitive, so that for example "SHIFT_JIS", "Shift_JIS", and "shift_jis" are equivalent.</p>
+
+    <p>This specification does not mandate which character encodings a user agent must support.</p>
+
+    <p><a href="">Conforming user agents</a>must correctly map to ISO 10646 all characters in any character encodings that they recognize (or they must behave as if they did)</p>
+</section>
+
+    <section id="Notes on specific encodings">
+    <h3><strong>Notes on specific encodings</strong> </h3>
+
+    <p>When HTML text is transmitted in UTF-16 (charset=UTF-16), text data should be transmitted in network byte order ("big-endian", high-order byte first) in accordance with <a href=""></a> <span style="color: red;">[ISO10646]</span></a> , Section 6.3 and <a href=""></a> <span style="color: red;">[UNICODE]</span></a>, clause C3, page 3-1.</p>
+
+    <p>Furthermore, to maximize chances of proper interpretation, it is recommended that documents transmitted as UTF-16 always begin with a ZERO-WIDTH NON-BREAKING SPACE character (hexadecimal FEFF, also called Byte Order Mark (BOM)) which, when byte-reversed, becomes hexadecimal FFFE, a character guaranteed never to be assigned. Thus, a user-agent receiving a hexadecimal FFFE as the first bytes of a text would know that bytes have to be reversed for the remainder of the text.</p>
+    
+    <p>The UTF-1 transformation format of <a href=""></a> <span style="color: red;">[ISO10646] </span></a> (registered by IANA as ISO-10646-UTF-1), should not be used. For information about ISO 8859-8 and the bidirectional algorithm, please consult the section on <a href="">bidirectionality and character encoding</a>.</p>
+</section>
+
+<section id="5.2.2 Specifying the character encoding">
+    <h2 style="color: blue;">5.2.2 Specifying the character encoding</h2>
+    <p>How does a server determine which character encoding applies for a document it serves? Some servers examine the first few bytes of the document, or check against a database of known files and encodings. Many modern servers give Web masters more control over charset configuration than old servers do. Web masters should use these mechanisms to send out a "charset" parameter whenever possible, but should take care not to identify a document with the wrong "charset" parameter value.</p>
+
+    <p>How does a user agent know which character encoding has been used? The server should provide this information. The most straightforward way for a server to inform the user agent about the character encoding of the document is to use the "charset" parameter of the "Content-Type" header field of the HTTP protocol (  <a href=""></a> <span style="color: red;">[RFC2616]</span></a> , sections 3.4 and 14.17) For example, the following HTTP header announces that the character encoding is EUC-JP:</p>
+
+    <code style="color: rgb(109, 0, 0);">Content-Type: text/html; charset=EUC-JP</code>
+
+    <p>Please consult the section on <a href="">conformance</a>  for the definition of <a href="">text/html.</a></p>
+
+    <p>The HTTP protocol ( <a href=""></a> <span style="color: red;">[RFC2616]</span></a>, section 3.7.1) mentions ISO-8859-1 as a default character encoding when the "charset" parameter is absent from the "Content-Type" header field. In practice, this recommendation has proved useless because some servers don't allow a "charset" parameter to be sent, and others may not be configured to send the parameter. Therefore, user agents must not assume any default value for the "charset" parameter.</p>
+
+    <p>To address server or configuration limitations, HTML documents may include explicit information about the document's character encoding; the <a href=""><small>META</small></a>element can be used to provide user agents with this information.</p>
+
+    <p>
+        For example, to specify that the character encoding of the current document is "EUC-JP", a document should include the following <a href=""><small>META</small></a> declaration:</p>
+
+        <code style="color: rgb(109, 0, 0);">< META http-equiv="Content-Type" content="text/html; charset=EUC-JP"></code>
+
+        <p>The <a href="">META</a> declaration must only be used when the character encoding is organized such that ASCII-valued bytes stand for ASCII characters (at least until the <a href="">META</a> element is parsed). <a href="">META</a> declarations should appear as early as possible in the <a href="">HEAD</a> element.</p>
+
+        <p>For cases where neither the HTTP protocol nor the <a href="">META</a> element provides information about the character encoding of a document, HTML also provides the <a href="">charset</a> attribute on several elements. By combining these mechanisms, an author can greatly improve the chances that, when the user retrieves a resource, the user agent will recognize the character encoding.</p>
+
+        <p>To sum up, conforming user agents must observe the following priorities when determining a document's character encoding (from highest priority to lowest)</p>
+
+        <ol>
+            <li>An HTTP "charset" parameter in a "Content-Type" field.</li>
+            <li>A <a href="">META</a> declaration with "http-equiv" set to "Content-Type" and a value set for "charset"</li>
+            <li>The <a href="">charset</a>  attribute set on an element that designates an external resource.</li>
+        </ol>
+
+        <p>In addition to this list of priorities, the user agent may use heuristics and user settings. For example, many user agents use a heuristic to distinguish the various encodings used for Japanese text. Also, user agents typically have a user-definable, local default character encoding which they apply in the absence of other indicators.</p>
+
+        <p>User agents may provide a mechanism that allows users to override incorrect "charset" information. However, if a user agent offers such a mechanism, it should only offer it for browsing and not for editing, to avoid the creation of Web pages marked with an incorrect "charset" parameter.</p>
+<blockquote cite="">
+        <p style="color: green;"><i><b>Note.</b> If, for a specific application, it becomes necessary to refer to characters outside <a href=""></a> <span style="color: red;">[ISO10646],</span></a> characters should be assigned to a private zone to avoid conflicts with present or future versions of the standard. This is highly discouraged, however, for reasons of portability.</i></p>
+    </blockquote>
+</section>
+
+<section id="5.3 Character references">
+    <h2 style="color: blue;">5.3 Character references</h2>
+
+    <p>A given character encoding may not be able to express all characters of the document character set. For such encodings, or when hardware or software configurations do not allow users to input some document characters directly, authors may use SGML character references. Character references are a character encoding-independent mechanism for entering any character from the document character set.</p>
+
+    <p>Character references in HTML may appear in two forms:</p>
+    
+    <ul>
+        <li>Numeric character references (either decimal or hexadecimal).</li>
+        <li>Character entity references.</li>
+    </ul>
+
+    <p>Character references within comments have no special meaning; they are comment data only.</p>
+
+    <blockquote cite="">
+        <p style="color: green;"><i><b>Note.</b> HTML provides other ways to present character data, in particular <a href=""> inline images.</a></i></p>
+    </blockquote>
+
+    <blockquote cite="">
+        <p style="color: green;"><i><b>Note.</b> In SGML, it is possible to eliminate the final ";" after a character reference in some cases (e.g., at a line break or immediately before a tag). In other circumstances it may not be eliminated (e.g., in the middle of a word). We strongly suggest using the ";" in all cases to avoid problems with user agents that require this character to be present.</i></p>
+    </blockquote>
+</section>
+
+<section id="5.3.1 Numeric character references">
+    <h2 style="color: blue;">5.3.1 Numeric character references</h2>
+    <p><i>Numeric character references</i>specify the <a href="">code position</a>  of a character in the document character set. Numeric character references may take two forms:</p>
+    <ul>
+        <li>The syntax "&#D;", where D is a decimal number, refers to the ISO 10646 decimal character number D.</li>
+        <li>The syntax "&#xH;" or "&#XH;", where H is a hexadecimal number, refers to the ISO 10646 hexadecimal character number H. Hexadecimal numbers in numeric character references are case-insensitive.</li>
+    </ul>
+
+    <p>Here are some examples of numeric character references:</p>
+
+    <ul>
+        <li>&# 229; (in decimal) represents the letter "a" with a small circle above it (used, for example, in Norwegian).</li>
+        <li>&# xE5; (in hexadecimal) represents the same character.</li>
+        <li>&# Xe5; (in hexadecimal) represents the same character as well.
+        </li>
+        <li>&# 1048; (in decimal) represents the Cyrillic capital letter "I"</li>
+        <li>&# x6C34; (in hexadecimal) represents the Chinese character for water.</li>
+    </ul>
+
+    <blockquote cite="">
+        <p style="color: green;"><i><b>Note.</b>Although the hexadecimal representation is not defined in <span style="color: red;"> [ISO8879],</span> it is expected to be in the revision, as described in  <span style="color: red;">[WEBSGML],</span>. This convention is particularly useful since character standards generally use hexadecimal representations.</i></p>
+    </blockquote>
+</section>
+<section id="5.3.2 Character entity references">
+    <h2 style="color: blue;">5.3.2 Character entity references</h2>
+
+    <p>In order to give authors a more intuitive way of referring to characters in the document character set, HTML offers a set of character entity references. Character entity references use symbolic names so that authors need not remember    <a href="">code positions</a>. For example, the character entity reference & aring; refers to the lowercase "a" character topped with a ring; "& aring;" is easier to remember than &# 229;.
+    </p>
+
+    <p>HTML 4 does not define a character entity reference for every character in the document character set. For instance, there is no character entity reference for the Cyrillic capital letter "I". Please consult the full list of character references defined in HTML 4.</p>
+
+    <p>Character entity references are case-sensitive. Thus, &A ring; refers to a different character (uppercase A, ring) than &a ring; (lowercase a, ring).</p>
+</section>
+
+<section id="5.4 Undisplayable characters">
+
+    <h2>5.4 Undisplayable characters</h2>
+
+    <p>A user agent may not be able to render all characters in a document meaningfully, for instance, because the user agent lacks a suitable font, a character has a value that may not be expressed in the user agent's internal character encoding, etc.</p>
+    
+    <p>Because there are many different things that may be done in such cases, this document does not prescribe any specific behavior. Depending on the implementation, undisplayable characters may also be handled by the underlying display system and not the application itself. In the absence of more sophisticated behavior, for example tailored to the needs of a particular script or language, we recommend the following behavior for user agents:</p>
+
+    <ol>
+        <li>Adopt a clearly visible, but unobtrusive mechanism to alert the user of missing resources.</li>
+        <li>If missing characters are presented using their numeric representation, use the hexadecimal (not decimal) form since this is the form used in character set standards.</li>
+    </ol>
+
+</section>
+    </main>
+    <article>
+        <h2>Site haqida</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio incidunt similique pariatur repudiandae numquam quibusdam error quam deserunt maxime officia, aut molestias nesciunt, repellat est molestiae dolorem illo dignissimos quaerat corrupti fuga perspiciatis porro, unde ipsum ut? Veritatis libero dolore, atque at a iste ratione soluta deleniti, rerum quia blanditiis! Eligendi reiciendis eos ipsam libero quos ipsum praesentium consectetur beatae qui distinctio, quis sit sint ratione vero ex quo laborum, quod, dignissimos ullam odit maxime facilis mollitia. Pariatur vitae quisquam error odio maiores consequatur delectus vel atque voluptatum fugit ullam veniam ipsam provident sint natus quod recusandae suscipit deleniti nobis dolores, nam quibusdam eius sequi! Provident ad vero non quaerat temporibus ut, ea accusantium animi perspiciatis ab! Eveniet dolorum atque earum fuga quasi at dignissimos saepe voluptate nesciunt sapiente possimus, enim excepturi. Placeat, quisquam laudantium consequatur soluta maxime fugit quis cumque libero a dolorum vero non alias tenetur quas? Vel deserunt, quasi voluptates veritatis obcaecati et doloremque nulla perferendis consequuntur, pariatur delectus excepturi dolor placeat hic, cumque eos! Quisquam, rerum doloremque molestias dolores totam consectetur accusantium blanditiis inventore debitis eum fugiat sed consequuntur animi labore eveniet vel vitae pariatur aut similique repellat explicabo aliquam quae enim. Quae doloribus facere sapiente?</p>
+    </article>
+    <aside>
+        Bu yerda sizni reklamangiz bo'lishi mumikin
+    </aside>
+    <hr>
+    <footer>
+        <b><a href="#">previous</a></b>
+        <b><a href="#">next</a></b>
+        <b><a href="#">contents</a></b>
+        <b><a href="#">elements</a></b>
+        <b><a href="#">attributes</a></b>
+        <b><a href="#">index</a></b>
+    </footer>
+</body>
+</html>

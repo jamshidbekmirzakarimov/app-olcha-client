@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 60px 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .logotip {
+        position: relative;
+        max-width: 100px;
+      }
+      header ul {
+        position: relative;
+        display: flex;
+      }
+      header ul li {
+        list-style: none;
+        font-size: 15px;
+      }
+      header ul li a {
+        display: inline-block;
+        color: rgb(173, 173, 173);
+        font-weight: 400;
+        margin-left: 40px;
+        text-decoration: none;
+      }
+      header .activ {
+        font-weight: 700;
+        color: black;
+      }
+      .content {
+        position: relative;
+        width: 100%;
+        display: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .content .textBox {
+        position: relative;
+        max-width: 600px;
+      }
+      .content .textBox h1 {
+        color: #000;
+        font-size: 2em;
+        line-height: 1.5em;
+      }
+      .content .textBox p {
+        color: #7d7987;
+        padding: 10px 5px;
+        margin-top: 10px;
+      }
+      .content .textBox a {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 10px 20px;
+        background: #458ff6;
+        border-radius: 55px;
+        text-decoration: none;
+        color: white;
+      }
+      .content .imgBox {
+        width: 600px;
+        display: flex;
+        padding-right: 50px;
+        justify-content: center;
+      }
+      .content .imgBox img {
+        max-width: 600px;
+      }
+
+    </style>
+    <link rel="stylesheet" href="uyishi.css" />
+  </head>
+  <body>
+    <section class="sec">
+      <header>
+        <a href="#"><img src="image/logo.png" class="logotip" alt="" /></a>
+        <ul>
+          <li><a class="activ" href="#">Home</a></li>
+          <li><a href="#">Find a doctor</a></li>
+          <li><a href="#">Apps</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h1>
+            Virtual healthcare <br />
+            for you
+          </h1>
+          <p>
+            Trafalgar provides progressive, and affordable <br />
+            healthcare, accessible on mobile and online <br />
+            for everyone
+          </p>
+          <a href="#">Consult today</a>
+        </div>
+        <div class="imgBox">
+          <img src="image/illustration.png" class="trafalgar" alt="" />
+        </div>
+      </div>
+    </section>  
+  </body>
+</html>
