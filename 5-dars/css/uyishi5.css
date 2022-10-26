@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&family=Open+Sans:wght@400;700&family=Source+Serif+Pro&family=Tenor+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  padding: 24px 170px;
+  align-items: center;
+  justify-content: space-between;
+}
+.Navbar_box {
+  display: flex;
+  list-style: none;
+}
+.navbar_title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222222;
+  margin-left: 32px;
+}
+.button {
+  padding: 12px 24px;
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #de2e54;
+  border: 2px solid #de2e54;
+  border-radius: 8px;
+}
+.glav_box_title_name {
+  display: flex;
+  height: 100vh;
+  background-color: #0eb4c1;
+  margin-bottom: 120px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 170px;
+}
+.title {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #ffffff;
+  margin-bottom: 36px;
+}
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.xizmatlar {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.box-img-dict {
+  margin-left: 288px;
+}
+.muolaja-title {
+  justify-content: flex-start;
+  margin-right: 288px;
+}
+.hijoma {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: #222222;
+  margin-bottom: 24px;
+}
+.Imom-Termiziy-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #444444;
+}
+.button2 {
+  padding: 12px 24px;
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #de2e54;
+  border: 2px solid #de2e54;
+  border-radius: 8px;
+  margin-left: 45%;
+  margin-bottom: 120px;
+}
+.fotter-box {
+  height: 253px;
+  background-color: #0eb4c1;
+}
+.royhatdan-otish {
+  text-align: center;
+  padding: 64px;
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  color: #ffffff;
+}
+.connect {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 76px;
+}
+.aloqa_button {
+  padding: 12px 24px;
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: initial;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+.navbar_bottom {
+  display: flex;
+  padding: 24px 170px;
+  align-items: center;
+  justify-content: space-between;
+  background: #222222;
+}
+.navbar_title_bottom {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-left: 32px;
+}
+.Navbar_box_bottom {
+  display: flex;
+  list-style: none;
+}

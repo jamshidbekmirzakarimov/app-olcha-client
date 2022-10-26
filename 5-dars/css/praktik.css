@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&family=Source+Serif+Pro&family=Tenor+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  padding: 37px 120px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 59px;
+}
+.Navbar_box {
+  display: flex;
+  list-style: none;
+}
+.navbar_title {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  margin-left: 40px;
+}
+.japan {
+  display: flex;
+  margin-left: 118px;
+  margin-right: 121px;
+  justify-content: flex-start;
+}
+.title__box {
+  margin-left: 51px;
+}
+.title {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999999;
+  margin-bottom: 18px;
+  margin-top: 5px;
+}
+.subtitle {
+  font-family: "Tenor Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 27px;
+}
+.subtitle-desc {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  margin-bottom: 28px;
+}
+.subtitle-desc-about {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.section {
+  display: flex;
+}
+.content {
+  padding: 60px 120px;
+}
+.img__box {
+  width: 387px;
+  height: 254px;
+  margin-bottom: 24px;
+}
+.shahar {
+  width: 100%;
+  height: 100%;
+}
+.Photography {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999999;
+  margin-bottom: 18px;
+}
+.name_title {
+  font-family: "Tenor Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.BY-Alessandra-Ortiz{
+font-family: 'Libre Franklin';
+font-style: normal;
+font-weight: 700;
+font-size: 10px;
+line-height: 12px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: #000000;
+}
