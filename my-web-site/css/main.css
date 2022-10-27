@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 0px;
+}
+
+p {
+  font-weight: 900px;
+  color: #111;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/my-web-site/image/macbook-iphone-photograph.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: color;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+  font-size: 5em;
+  color: rgb(255, 255, 255);
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+
+.banner .content p {
+  font-size: 3em;
+  color: rgb(175, 175, 175);
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  background: rgba(36, 36, 36, 0.308);
+}
+
+header.sticky {
+  background: rgba(39, 38, 38, 0.596);
+  backdrop-filter: blur(7px);
+  padding: 15px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.233);
+}
+header .logotip {
+  color: rgb(241, 8, 8);
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+header .sticky .logotip {
+  color: red;
+}
+header .logotip span {
+  color: rgb(255, 255, 255);
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+
+header .navigation {
+  position: relative;
+  display: flex;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+
+header .navigation li {
+  list-style: none;
+  margin-left: 30px;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+}
+
+header .navigation li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 400;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-name: text;
+  transition: 0.5s;
+  padding: 10px;
+}
+header .navigation li a:hover {
+  background: red;
+  color: white;
+}
+header .navigation li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+@keyframes text {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.content li {
+  list-style: none;
+  position: relative;
+  display: block;
+}
+.content li i {
+  font-size: 30px;
+  color: white;
+  z-index: 12;
+}
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title h2 {
+  color: #212529;
+  font-size: 2.5em;
+  padding: 50px;
+}
+.proyekt {
+  background: white;
+}
+
+.proyekt .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.proyekt .content .box {
+  width: 400px;
+  margin: 20px;
+  border: 15px solid #fff;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.192);
+}
+
+.proyekt .content .box .imgBx {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.proyekt .content .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.proyekt .content .box .imgBx img:hover {
+  opacity: 40%;
+  background: inherit blue;
+  width: 105%;
+  height: 105%;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+}
+.proyekt .content .box .text {
+  padding: 10px 70px 10px;
+}
+.proyekt .content .box .text h3 {
+  font-weight: 400;
+  cursor: pointer;
+  color: #111;
+}
+@media (max-width: 991px) {
+  header,
+  header.sticky {
+    padding: 10px 20px;
+  }
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    width: 100%;
+    height: calc(100% - 68px);
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  header .navigation li {
+    margin-left: 0;
+  }
+
+  header .navigation li a {
+    color: #000;
+    font-size: 1.6em;
+  }
+
+  .menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Font_Awesome_5_solid_bars.svg/896px-Font_Awesome_5_solid_bars.svg.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .menuToggle.active {
+    background: url(http://cdn.onlinewebfonts.com/svg/img_233606.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  header.sticky .menuToggle {
+  }
+  section {
+    padding: 20px;
+  }
+  .banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .row.col50 {
+    position: relative;
+    width: 100%;
+  }
+  .row .col50 .imgBx {
+    height: 300px;
+    margin-top: 20px;
+  }
+  .menu.content {
+    margin-top: 20px;
+  }
+  .menu.content .box {
+    margin: 10px;
+  }
+  /*  iframe, audio {
+      display: block;
+      margin: 0 auto;
+      border: 3px solid #3fb6b2;
+  }*/
+}
