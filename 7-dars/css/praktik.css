@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:wght@300;500;600&family=Libre+Franklin:wght@400;600&family=Open+Sans:wght@400;700&family=Source+Serif+Pro&family=Tenor+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+}
+.navgation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 38px 100px;
+}
+.text-list {
+  display: flex;
+  list-style: none;
+  width: 257px;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.list-link{
+  text-decoration: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #171717;
+}
+.button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #171717;
+  padding: 11px  24px 10px 24px;
+  border: 1px solid #8B8B8B;
+}
+.header-top-end{
+  display: flex;
+  align-items: center;
+}
+.search-icon{
+  width: 24px;
+  margin-right: 24px;
+}
+
